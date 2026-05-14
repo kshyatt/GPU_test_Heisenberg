@@ -1,17 +1,15 @@
-
-using TensorKit, PEPSKit, OptimKit, Random, JLD2, LinearAlgebra, KrylovKit
+using TensorKit, PEPSKit, OptimKit, Random, JLD2, LinearAlgebra, KrylovKit, MatrixAlgebraKit, CUDA, cuTENSOR, CUDA.CUDACore.Adapt
 
 # Define parameters
 lattice = InfiniteSquare(2, 2)
 
 # Implement Hamiltonian
-H = heisenberg_XYZ(InfiniteSquare(2, 2); Jx = 1.0, Jy = 1.0, Jz = 1.0);
-
+H = adapt(CuArray, heisenberg_XYZ(InfiniteSquare(2, 2); Jx = 1.0, Jy = 1.0, Jz = 1.0));
 
 D_peps = 2
 χ_env = 12
 
-peps0 = PEPSKit.peps_normalize(InfinitePEPS(ComplexSpace(2), ComplexSpace(D_peps); unitcell=(2, 2)));
+peps0 = PEPSKit.peps_normalize(InfinitePEPS(randn, CuMatrix{ComplexF64}, ComplexSpace(2), ComplexSpace(D_peps); unitcell=(2, 2)));
 env0 = CTMRGEnv(peps0, ComplexSpace(χ_env));
 
 boundary_alg = SimultaneousCTMRG(;
