@@ -5,6 +5,7 @@ cuTENSOR = "011b41b2-24ef-40a8-b3eb-fa098493e9e1"
 JLD2 = "033835bb-8acc-5ee8-8aae-3f567f8a3819"
 KrylovKit = "0b1a1467-8014-51b9-945f-bf0ae24f4b77"
 LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+MatrixAlgebraKit = "6c742aac-3347-4629-af66-fc926824e5e4"
 MPSKit = "bb1c41ca-d63c-52ed-829e-0820dda26502"
 MPSKitModels = "ca635005-6f8c-4cd1-b51d-8491250ef2ab"
 OptimKit = "77e91f04-9b3b-57a6-a776-40b61faaebe0"
@@ -20,5 +21,6 @@ BlockTensorKit = {url = "https://github.com/QuantumKitHub/BlockTensorKit.jl", re
 TensorKit = {url = "https://github.com/QuantumKitHub/TensorKit.jl", rev="main"}
 TensorKitManifolds = {url = "https://github.com/QuantumKitHub/TensorKitManifolds.jl", rev = "ksh/bump"}
 TensorKitTensors = {url = "https://github.com/QuantumKitHub/TensorKitTensors.jl", rev = "ksh/compat"}
+MatrixAlgebraKit = {url = "https://github.com/QuantumKitHub/MatrixAlgebraKit.jl", rev="ksh/cusvd"}
 MPSKitModels = {url = "https://github.com/QuantumKitHub/MPSKitModels.jl", rev="ksh/bump"}
 MPSKit = {url = "https://github.com/QuantumKitHub/MPSKit.jl", rev="ksh/cu2"}
